@@ -10,7 +10,25 @@ export const ContactForm = ({
   handleSubmit
 }) => {
   return (
-    <></>
+    <>
+      <form onSubmit={handleSubmit}>
+        <input 
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)} />
+        <input 
+          type="tel"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          // regex for phone number
+          pattern="[0-9]{10}" />
+        <input 
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)} />
+        <input type="submit" />
+      </form>
+    </>
   );
 };
 
