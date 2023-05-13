@@ -16,22 +16,22 @@ function App() {
   Implement functions to add data to
   contacts and appointments
   */
-  function addContact(name, number, email) {
-    setContacts = ([
+  function addContact(name, phone, email) {
+    setContacts([
       ...contacts,
       {
         name: name,
-        number: number,
+        phone: phone,
         email: email
       }
     ])
   };
 
-  function addAppointment(name, contact, date, time) {
-    setAppointments = ([
+  function addAppointment(title, contact, date, time) {
+    setAppointments([
       ...appointments,
       {
-        name: name,
+        title: title,
         contact: contact,
         date: date,
         time: time
@@ -43,7 +43,7 @@ function App() {
     <Route path="/" element={ <Root/> }>
       <Route index element={ <Navigate to={ROUTES.CONTACTS} replace/> }/>
       <Route path={ROUTES.CONTACTS} element={ <ContactsPage contacts={contacts} addContact={addContact} /> /* Add props to ContactsPage */ }/>
-      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage appointments={appointments} addAppointment={addAppointment} /> /* Add props to AppointmentsPage */ }/>
+      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage contacts={contacts} appointments={appointments} addAppointment={addAppointment} /> /* Add props to AppointmentsPage */ }/>
     </Route>
   ));
   
