@@ -6,7 +6,7 @@ export const ContactPicker = ( {name, value, contacts, onChange} ) => {
       <option key='0' value=''>
         No Contact Selected
       </option>
-      {contacts?.map((contact,i) =>
+      {contacts.map((contact,i) => 
         <option key={i+1} value={contact.name}>
           {contact.name}
         </option>
