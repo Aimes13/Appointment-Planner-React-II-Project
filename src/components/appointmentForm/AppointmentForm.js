@@ -33,8 +33,8 @@ export const AppointmentForm = ({
         <br/>
         <label>
           <ContactPicker
-              id='contact'
-              contact={contact}
+              name='contact'
+              value={contact}
               contacts={contacts}
               setContact={setContact}
               onChange={(e) => setContact(e.target.value)} />
